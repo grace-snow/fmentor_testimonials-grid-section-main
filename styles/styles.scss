@@ -1,0 +1,278 @@
+// Variables
+$brand-primary: hsl(263, 55%, 52%);
+$brand-secondary: hsl(228, 45%, 44%);
+$white: hsl(0, 0%, 100%);
+$grey-100: hsl(210, 46%, 95%);
+$grey-200: hsl(0, 0%, 81%);
+$grey-600: hsl(217, 19%, 35%);
+$grey-800: hsl(219, 29%, 14%);
+
+$opacity-verified: 50%;
+$opacity-review-para: 70%;
+
+$size-main: 0.8125rem; // 13px - very small!
+$size-small: 0.6875rem;
+$font-family: "Barlow Semi Condensed", sans-serif;
+$weight-normal: 500;
+$weight-bold: 600;
+
+$breakpoints: (
+	small: 40em,
+	// 544px,
+		medium: 60em,
+	// 760px,
+		large: 61.25em,
+	// 980px,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+);
+
+/*----------------------------
+	RESET: START
+------------------------------*/
+// https://github.com/hankchizljaw/modern-css-reset/blob/master/dist/reset.css
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+	padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Set core root defaults */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+	margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+	filter: blur(10px);
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/*----------------------------
+	Visually hidden
+----------------------------*/
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}
+
+/*----------------------------
+	Attribution in footer
+----------------------------*/
+.attribution {
+	font-size: $size-small;
+	text-align: center;
+}
+.attribution a {
+	color: $brand-secondary;
+
+	&:hover,
+	&:focus {
+		color: $brand-primary;
+	}
+}
+
+/*----------------------------
+	Page Layout
+----------------------------*/
+
+// Make body fill viewport at any size
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+	padding: 1rem;
+	font-family: $font-family;
+	font-size: $size-main;
+	background: $grey-100;
+}
+
+// vertically and horizontally center the main content
+// force footer to bottom
+.main {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.testimonials-grid {
+	max-width: 1100px;
+	margin: 0 auto 2rem auto;
+}
+
+.testimonial {
+	border-radius: 0.5rem;
+	padding: 2rem;
+	margin-bottom: 1rem;
+
+	&__header {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 1rem;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+	}
+
+	&__name {
+		font-size: 1rem;
+	}
+	&__status {
+		opacity: $opacity-verified;
+	}
+
+	&__img {
+		border-radius: 50%;
+		border: 2px solid $white;
+		height: 3rem;
+		width: 3rem;
+	}
+
+	.lede {
+		font-size: 1.4rem;
+		line-height: 1.2;
+		margin-bottom: 1rem;
+	}
+
+	&:nth-child(1) {
+		background: $brand-primary;
+		color: $white;
+		grid-area: t1;
+		background-image: url(/images/bg-pattern-quotation.svg);
+		background-repeat: no-repeat;
+		background-position: right 10% top 0;
+		background-size: 8rem;
+
+		.testimonial__img {
+			border-color: lighten($brand-primary, 20);
+		}
+	}
+	&:nth-child(2) {
+		background: $grey-600;
+		color: $white;
+		grid-area: t2;
+	}
+	&:nth-child(3) {
+		background: $white;
+		color: $grey-600;
+		grid-area: t3;
+	}
+	&:nth-child(4) {
+		background: $grey-800;
+		color: $white;
+		grid-area: t4;
+
+		.testimonial__img {
+			border-color: $brand-primary;
+		}
+	}
+	&:nth-child(5) {
+		background: $white;
+		color: $grey-600;
+		grid-area: t5;
+	}
+}
+
+@media screen and (min-width: map-get($breakpoints, small)) {
+	.testimonials-grid {
+		display: grid;
+		gap: 1rem;
+		grid-template-rows: repeat(auto, auto);
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-areas:
+			"t1 t1 t3"
+			"t2 t4 t4"
+			"t5 t5 t5";
+	}
+
+	.testimonial {
+		margin-bottom: 0;
+
+		&:nth-child(1) {
+			background-position: right 20% top 0;
+		}
+	}
+}
+@media screen and (min-width: map-get($breakpoints, medium)) {
+	.testimonials-grid {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas:
+			"t1 t1 t2 t5"
+			"t3 t4 t4 t5";
+	}
+}
