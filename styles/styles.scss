@@ -22,7 +22,7 @@ $breakpoints: (
 		medium: 60em,
 	// 760px,
 		large: 61.25em,
-	// 980px,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+	// 980px,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 );
 
 /*----------------------------
@@ -227,9 +227,11 @@ body {
 		color: $white;
 		grid-area: t2;
 	}
-	&:nth-child(3) {
+	&:nth-child(3),
+	&:nth-child(5) {
 		background: $white;
 		color: $grey-600;
+		box-shadow: 1rem 1rem 8rem -1rem $grey-200;
 		grid-area: t3;
 	}
 	&:nth-child(4) {
@@ -242,8 +244,6 @@ body {
 		}
 	}
 	&:nth-child(5) {
-		background: $white;
-		color: $grey-600;
 		grid-area: t5;
 	}
 }

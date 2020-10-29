@@ -198,9 +198,10 @@ body {
   grid-area: t2;
 }
 
-.testimonial:nth-child(3) {
+.testimonial:nth-child(3), .testimonial:nth-child(5) {
   background: white;
   color: #48556a;
+  box-shadow: 1rem 1rem 8rem -1rem #cfcfcf;
   grid-area: t3;
 }
 
@@ -215,8 +216,6 @@ body {
 }
 
 .testimonial:nth-child(5) {
-  background: white;
-  color: #48556a;
   grid-area: t5;
 }
 
