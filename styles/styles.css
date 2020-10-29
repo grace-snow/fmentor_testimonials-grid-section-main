@@ -149,11 +149,13 @@ body {
 
 .testimonial__header {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row-reverse;
   align-items: center;
   justify-content: flex-end;
   gap: 1rem;
   margin-bottom: 1rem;
+  font-size: 1rem;
   line-height: 1.2;
 }
 
@@ -166,10 +168,11 @@ body {
 }
 
 .testimonial__img {
+  flex-shrink: 0;
   border-radius: 50%;
   border: 2px solid white;
-  height: 3rem;
-  width: 3rem;
+  height: 3em;
+  width: 3em;
 }
 
 .testimonial .lede {
