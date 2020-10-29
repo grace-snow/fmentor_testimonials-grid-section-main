@@ -22,7 +22,7 @@ $breakpoints: (
 		medium: 60em,
 	// 760px,
 		large: 61.25em,
-	// 980px,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+	// 980px,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 );
 
 /*----------------------------
@@ -170,7 +170,7 @@ body {
 }
 
 .testimonials-grid {
-	max-width: 1100px;
+	max-width: 1200px;
 	margin: 0 auto 2rem auto;
 }
 
@@ -251,7 +251,7 @@ body {
 @media screen and (min-width: map-get($breakpoints, small)) {
 	.testimonials-grid {
 		display: grid;
-		gap: 1rem;
+		gap: 1.5rem;
 		grid-template-rows: repeat(auto, auto);
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-areas:
@@ -270,6 +270,7 @@ body {
 }
 @media screen and (min-width: map-get($breakpoints, medium)) {
 	.testimonials-grid {
+		gap: 2rem;
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-areas:
 			"t1 t1 t2 t5"
