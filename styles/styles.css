@@ -226,7 +226,7 @@ body {
     gap: 1.5rem;
     grid-template-rows: repeat(auto, auto);
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "t1 t1 t3" "t2 t4 t4" "t5 t5 t5";
+    grid-template-areas: "t1 t1 t3" "t2 t4 t4" "t5 t5 t5";
   }
   .testimonial {
     margin-bottom: 0;
@@ -240,6 +240,6 @@ body {
   .testimonials-grid {
     gap: 2rem;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "t1 t1 t2 t5" "t3 t4 t4 t5";
+    grid-template-areas: "t1 t1 t2 t5" "t3 t4 t4 t5";
   }
 }
